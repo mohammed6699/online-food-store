@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-center mb-2">
+    @for(tag of tags; track tag.name;){
+        <button [routerLink]="['/tag', tag.name]" class=" btn btn-secondary ms-2 me-2">{{tag.name}} {{tag.count}}</button>
+    }
+    <button [routerLink]="['/home']" class="btn btn-secondary">Back Home</button>
+</div>

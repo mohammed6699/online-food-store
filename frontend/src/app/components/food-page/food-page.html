@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="mt-5 d-flex justify-content-center align-content-center" 
+            style="margin-top: 150px!important; margin-bottom: 150px!important; cursor: pointer;">
+        <div class="card w-50" style="width: 15rem ;">
+            <div class="d-flex gap-2">
+                <img [src]="food.imageUrl" class="card-img-top" [alt]="food.name" style="width: 350px;">
+            <div class="card-body">
+                <h5 class="card-text">{{food.name}}</h5>
+                <h5 class="card-text">price: {{food.price | currency}}</h5>
+                <div class="d-flex gap-1">
+                    <p>rating {{food.stars}}</p>
+                    <span><i class="fa-solid fa-star" style="color: #3770d2;"></i></span>
+                </div>
+                <p class="card-text">Food Origin: {{food.origins}}</p>
+                <p class="card-text">{{food.description}}</p>
+                <button [routerLink]="['/home']" class="btn btn-secondary">Back Home</button>
+                <button [routerLink]="['/cart']" class="btn btn-secondary ms-2" (click)="addToCart()">Add to cart</button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
