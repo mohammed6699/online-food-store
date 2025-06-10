@@ -1,0 +1,7 @@
+<div>
+    <!-- #s => is a templetae refrence give you direct access insude html file which will hold all the data about this specific tag -->
+    <input #s type="text" placeholder="serach food" 
+    (keyup.enter)="search(s.value)" 
+    [value]="searchTerm"/>
+    <button (click)="search(s.value)">search</button>
+</div>

@@ -1,0 +1,70 @@
+<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+<div class="container">
+    <ul>
+        @for(cartItem of cart.items; track cartItem.food.id){
+          
+            <div class="mt-5 d-flex justify-content-center align-content-center" 
+            style="cursor: pointer;">
+        <div class="card w-50" style="width: 15rem ;">
+            <div class="d-flex gap-2">
+                <img [src]="cartItem.food.imageUrl" class="card-img-top" [alt]="cartItem.food.name" style="width: 350px;">
+            <div class="card-body">
+                <h5 class="card-text">{{cartItem.food.name}}</h5>
+                <h5 class="card-text">price: {{cartItem.food.price | currency}}</h5>
+                <div class="d-flex gap-1">
+                    <p>rating {{cartItem.food.stars}}</p>
+                    <span><i class="fa-solid fa-star" style="color: #3770d2;"></i></span>
+                </div>
+                <div>
+                    <select #quantitySelect
+                    [value]="cartItem.quantity"
+                    (change)="cahngeQuantity(cartItem, quantitySelect.value)">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <p class="card-text">{{cartItem.food.description}}</p>
+                <div>
+                <div>
+                    <div class="mb-1">Total Count: {{cart.totalCount}}</div>
+                    <div class="mb-2">Total price: {{cart.totlaPrice | currency}}</div>
+                </div>
+                    <button class="btn btn-secondary mb-3" [routerLink]="['/checkout']">Proceed to CheckOut</button>
+                </div>
+                <button class="btn btn-secondary " (click)="removeFromCart(cartItem)">Remove</button>
+            </div>
+            </div>
+        </div>
+    </div>
+        }
+    </ul>
+    
+</div>
+  <!-- <li style="list-style: none;">
+                <div>
+                    <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name"/>
+                </div>
+                <div>
+                    <a routerLink="/food/{{cartItem.food.id}}">{{cartItem.food.name}}</a>
+                </div>
+                <div>
+                    <select #quantitySelect
+                    [value]="cartItem.quantity"
+                    (change)="cahngeQuantity(cartItem, quantitySelect.value)">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div>
+                    {{cartItem.price | currency}}
+                </div>
+                <div>
+                    <button class="remove-button" (click)="removeFromCart(cartItem)">Remove</button>
+                </div>
+            </li> -->

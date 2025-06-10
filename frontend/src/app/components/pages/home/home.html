@@ -1,0 +1,32 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<ul>
+    <div class="container">
+    <div class="row">
+        @for(food of foods; track food.id){
+            <div class="col-md-3 mt-2 mb-2">
+                <a [routerLink]="['/food', food.id]">
+                    <div class="card" style="width: 18rem;">
+                    <img [src]="food.imageUrl" class="card-img-top" [alt]="food.name">
+                    <div class="card-body">
+                        <h5 class="card-title">{{food.name}}</h5>
+                        <h5>{{food.description}}</h5>
+                        <h5>Food Price: {{food.price | currency}}</h5>
+                        <div class="d-flex">
+                            <h5>Rating: {{food.stars}}</h5>
+                            <span class="ps-2"><i class="fa-solid fa-star" style="color: #74C0FC;"></i></span>
+                        </div>
+                        <div class="d-flex">
+                            <h5>CookTime: {{food.cookTime}}</h5>
+                            <span class="ps-2"><i class="fa-solid fa-clock" style="color: #74C0FC;"></i></span>
+                        </div>
+                        <h5>Food Origin: [{{food.origins}}]</h5>
+                        <!-- <h5>Food Origin: [{{food.tags}}]</h5> -->
+                    </div>
+                    </div>
+                    </a>
+            </div>
+        }
+    </div>
+    </div>
+</ul>
