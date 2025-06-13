@@ -1,4 +1,8 @@
 <app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+<app-not-found
+[visible]="!cart || !cart.items.length"
+NotFoundmessage="Cart Page is Now Empty"
+resetLinkText="Return To Home"></app-not-found>
 <div class="container">
     <ul>
         @for(cartItem of cart.items; track cartItem.food.id){
