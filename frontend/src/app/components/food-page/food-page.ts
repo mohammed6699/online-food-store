@@ -4,10 +4,11 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FoodService } from '../../services/food-service';
 import { CurrencyPipe } from '@angular/common';
 import { CartService } from '../../services/cart-service';
+import { NotFound } from "../not-found/not-found";
 
 @Component({
   selector: 'app-food-page',
-  imports: [CurrencyPipe, RouterLink],
+  imports: [CurrencyPipe, RouterLink, NotFound],
 templateUrl: './food-page.html',
   styleUrl: './food-page.css'
 })

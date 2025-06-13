@@ -5,9 +5,10 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { Search } from "../../partials/search/search";
 import { Tags } from "../../partials/tags/tags";
+import { NotFound } from "../../not-found/not-found";
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, CurrencyPipe, Search, Tags],
+  imports: [RouterLink, CurrencyPipe, Search, Tags, NotFound],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
